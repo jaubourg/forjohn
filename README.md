@@ -46,15 +46,13 @@ C)
 Conclusion:
 ------------
 Current implementation of jQuery.require:
+
 * makes all dom-manipulation code dependant on all files by blocking the ready event (even code that does not depend on any external resource)
 * forbids any progressive "rendering" (ie: dom transformation)
 * prevents all dom-manipulation code from being executed if a SINGLE request fails
 
 As it is today, jQuery.require is a step backward regarding javascript modularity and progressive page enhancement.
 
-While today's trend is about widgets and independant modules, ALL CODE making use of jQuery.ready will get blocked by any plugin making use of jQuery.require.
-If it stays as it is, when nobody knows what piece of code will be used together with his own, plugin developpers will go back to hacks in order to get around jQuery.ready
-and it will get de-facto deprecated.
+While today's trend is about widgets and independant modules, ALL CODE making use of jQuery.ready will get blocked by any plugin making use of jQuery.require. If it stays as it is, when nobody knows what piece of code will be used together with his own, plugin developpers will go back to hacks in order to get around jQuery.ready and it will get de-facto deprecated.
 
-I completely disagree with how jQuery.require is being implemented at the moment.
-The need for a synchronized multiple script loading system is a given but I still strongly believe stalling the ready event is NOT the solution.
+I completely disagree with how jQuery.require is being implemented at the moment. The need for a synchronized multiple script loading system is a given but I still strongly believe stalling the ready event is NOT the solution.
