@@ -28,19 +28,19 @@ Behaviour:
 A)
 
 * the body background is immediately set to white
-* #containerX blocks get updated as serviceX.php are loaded (including the possibility to interact with them)
+* containerX blocks get updated as serviceX.php are loaded (including the possibility to interact with them)
 * failing-module.js doesn't cause any trouble
 
 B)
 
 * the body background is NEVER set to white
-* No #containerX block gets updated even if its corresponding serviceX.php has been received
+* No containerX block gets updated even if its corresponding serviceX.php has been received
 * failing-module.js prevents any code to be executed on the page
 
 C)
 
 * the body background is not set to white immediately
-* #containerX blocks are not updated as serviceX.php are loaded
+* containerX blocks are not updated as serviceX.php are loaded
 * once ALL of the serviceX.php files are loaded, the ready event is fired and all the blocks updated
 
 Conclusion:
